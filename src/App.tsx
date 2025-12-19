@@ -1,9 +1,6 @@
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Styles
-import { TrustDSStyles } from './styles/TrustDSStyles';
-
 // Components
 import { Header } from './components/layout/Header';
 import { Sidebar } from './components/layout/Sidebar';
@@ -33,7 +30,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen pb-12 bg-[var(--color-slate-50)] text-[var(--foreground)]">
-      <TrustDSStyles />
       <Header />
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 pt-10 md:pt-12" ref={topRef}>
