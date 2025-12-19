@@ -1,0 +1,52 @@
+
+export const TrustDSStyles = () => (
+  <style>{`
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&family=Inter+Tight:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      color-scheme: only light;
+
+      /* FONTS */
+      --font-base: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+      --font-sans: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+      --font-sans-2: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+      /* RADIUS */
+      --radius-sm: 0.25rem;
+      --radius-base: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.625rem;
+      --radius-xl: 0.75rem;
+      --radius-2xl: 1rem;
+      --radius-3xl: 1.5rem;
+      
+      /* COLORS */
+      --primary-50: #E6F1EB; --primary-100: #c8e3d4; --primary-200: #8ac0a2;
+      --primary-300: #5ca77e; --primary-400: #2e8e59; --primary-500: #007535;
+      --primary-600: #005931; --primary-700: #004d37; --primary-800: #004032;
+      
+      --secondary-50: #f0f5e0; --secondary-100: #e2edc5; --secondary-200: #c9dd95;
+      --secondary-300: #b6d06f; --secondary-400: #a3c449; --secondary-500: #90b823;
+      --secondary-600: #63991d; --secondary-700: #407d18; --secondary-800: #266614;
+
+      --color-slate-50: #F8FAFC; --color-slate-100: #F1F5F9; --color-slate-200: #E2E8F0;
+      --color-slate-300: #CAD5E2; --color-slate-400: #90A1B9; --color-slate-500: #62748E;
+      --color-slate-600: #45556C; --color-slate-700: #314158; --color-slate-800: #1D293D;
+      --color-slate-900: #0F172B; --color-slate-950: #020618;
+      
+      --color-red-50: #FEF2F2; --color-red-100: #FEE2E2; --color-red-200: #FECACA;
+      --color-red-600: #DC2626; --color-red-700: #B91C1C; --color-red-800: #991B1B;
+      --color-yellow-50: #FEFCE8; --color-yellow-800: #854D0E;
+
+      --background: #ffffff;
+      --foreground: var(--color-slate-950);
+    }
+
+    body {
+      font-family: var(--font-base);
+      color: var(--foreground);
+      background-color: var(--color-slate-50);
+      -webkit-font-smoothing: antialiased;
+    }
+  `}</style>
+);
