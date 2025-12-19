@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { CheckCircle2, ClipboardCheck, AlertTriangle, ExternalLink, ArrowRight, ShieldCheck, X, Zap, Mail, FileSignature, Clock } from 'lucide-react';
+import { CheckCircle2, ClipboardCheck, ExternalLink, ArrowRight, ShieldCheck, Zap, Mail, FileSignature, Clock } from 'lucide-react';
 import { DsButton, DsH2, DsP, DsBadge } from '../ui/DesignSystem';
 import { WizardStepState } from '../../types/migration';
 
