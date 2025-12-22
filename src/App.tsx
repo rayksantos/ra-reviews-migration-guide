@@ -8,8 +8,10 @@ import { DsButton, DsCard, DsH1 } from './components/ui/DesignSystem';
 
 // Hooks
 import { useMigrationSteps } from './hooks/useMigrationSteps';
+import { useI18n } from './i18n/context';
 
 export default function App() {
+  const { t } = useI18n();
   const {
     steps,
     currentStep,
@@ -29,16 +31,16 @@ export default function App() {
     : {};
 
   return (
-    <div className="min-h-screen pb-12 bg-[var(--color-slate-50)] text-[var(--foreground)]">
+    <div className="min-h-screen pb-12 bg-[var(--background-page)] text-[var(--foreground)] transition-colors">
       <Header />
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 pt-10 md:pt-12" ref={topRef}>
         
         {/* HERO SECTION */}
         <div className="text-center mb-10 space-y-4 animate-in fade-in slide-in-from-top-4 duration-700">
-          <DsH1 className="text-center">Sua reputação não pode começar do zero</DsH1>
-          <p className="text-lg text-[var(--color-slate-500)] max-w-2xl mx-auto leading-relaxed">
-            Cada review conquistado é um ativo valioso do seu negócio. Garanta a migração segura do seu histórico e mantenha a confiança dos seus clientes intacta na nova plataforma.
+          <DsH1 className="text-center">{t.app.hero.title}</DsH1>
+          <p className="text-lg text-[var(--text-subtle)] max-w-2xl mx-auto leading-relaxed">
+            {t.app.hero.description}
           </p>
         </div>
 
@@ -54,8 +56,8 @@ export default function App() {
 
           {/* MOBILE PROGRESS BAR */}
           <div className="lg:hidden w-full mb-2">
-            <div className="flex justify-between text-xs font-bold text-[var(--color-slate-500)] mb-2 px-1">
-                <span>Passo {currentStep + 1} de {steps.length}</span>
+            <div className="flex justify-between text-xs font-bold text-[var(--text-subtle)] mb-2 px-1">
+                <span>{t.app.navigation.step} {currentStep + 1} {t.app.navigation.of} {steps.length}</span>
                 <span>{Math.round(progress)}%</span>
             </div>
             <div className="h-2 bg-[var(--color-slate-200)] rounded-full overflow-hidden">
@@ -84,11 +86,11 @@ export default function App() {
                           disabled={currentStep === 0}
                           className="w-full sm:w-auto"
                       >
-                          <ChevronLeft size={18} className="mr-1" /> Voltar
+                          <ChevronLeft size={18} className="mr-1" /> {t.app.navigation.back}
                       </DsButton>
 
                       <DsButton onClick={handleNext} className="w-full sm:w-auto">
-                          Próximo <ChevronRight size={18} className="ml-1" />
+                          {t.app.navigation.next} <ChevronRight size={18} className="ml-1" />
                       </DsButton>
                   </div>
                 )}
@@ -99,7 +101,7 @@ export default function App() {
       
       {/* Simple Footer */}
       <footer className="mt-20 border-t border-[var(--color-slate-200)] py-8 text-center text-[var(--color-slate-400)] text-sm">
-        <p>© 2025 RA Reviews. Todos os direitos reservados.</p>
+        <p>{t.app.footer.copyright}</p>
       </footer>
     </div>
   );

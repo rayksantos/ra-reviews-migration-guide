@@ -1,17 +1,32 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { MIGRATION_STEPS, STEP_COMPONENTS } from '../constants/migration';
+import { STEP_COMPONENTS } from '../constants/migration';
 import { StepDefinition } from '../types/migration';
+import { useI18n } from '../i18n/context';
+import { HelpCircle, Download, FileSpreadsheet, FileSignature, UploadCloud } from 'lucide-react';
 
 /**
  * Hook customizado para gerenciar o estado e navegação dos steps do wizard
  */
 export const useMigrationSteps = () => {
+  const { t } = useI18n();
   const [currentStep, setCurrentStep] = useState(0);
   const topRef = useRef<HTMLDivElement>(null);
 
-  // Cria os steps completos com componentes
-  const steps: StepDefinition[] = MIGRATION_STEPS.map((step, index) => ({
-    ...step,
+  // Títulos traduzidos dos steps
+  const stepTitles = [
+    t.sidebar.stepTitles.step1,
+    t.sidebar.stepTitles.step2,
+    t.sidebar.stepTitles.step3,
+    t.sidebar.stepTitles.step4,
+    t.sidebar.stepTitles.step5,
+  ];
+
+  const stepIcons = [HelpCircle, Download, FileSpreadsheet, FileSignature, UploadCloud];
+
+  // Cria os steps completos com componentes e títulos traduzidos
+  const steps: StepDefinition[] = stepTitles.map((title, index) => ({
+    title,
+    icon: stepIcons[index],
     component: STEP_COMPONENTS[index],
   }));
 
@@ -50,4 +65,3 @@ export const useMigrationSteps = () => {
     progress,
   };
 };
-
