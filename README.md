@@ -34,7 +34,8 @@ npm run deploy
 
 ## 📚 Documentação
 
-- [Documentação Técnica](./docs/CONFLUENCE_DOCUMENTATION.md)
+- [📖 Documentação Técnica Completa](./docs/TECHNICAL_DOCUMENTATION.md) - Arquitetura, padrões, sistemas e guias de desenvolvimento
+- [Documentação Técnica (Legado)](./docs/CONFLUENCE_DOCUMENTATION.md)
 - [Guia de Deploy](./docs/DEPLOY_GITHUB_PAGES.md)
 - [Formulário de Migração](./docs/FORMULARIO_MIGRACAO.md)
 
